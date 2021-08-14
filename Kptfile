@@ -21,11 +21,11 @@ info:
     - kpt-team@google.com
   description: This is an example nginx package.
 pipeline:
-  validators:
-    - image: gcr.io/kpt-fn/kubeval:v0.1
-      configMap:
-        strict: "true"
   mutators:
     - image: gcr.io/kpt-fn/set-labels:v0.1
       configMap:
         env: dev
+  validators:
+    - image: gcr.io/kpt-fn/kubeval:v0.1
+      configMap:
+        strict: "true"

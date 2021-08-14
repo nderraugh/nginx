@@ -16,10 +16,12 @@ kind: Service
 metadata: # kpt-merge: /my-nginx-svc
   name: my-nginx-svc
   labels:
+    env: dev
     app: nginx
 spec:
   type: LoadBalancer
   selector:
+    env: dev
     app: my-nginx
   ports:
     - protocol: TCP

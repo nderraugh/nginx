@@ -15,19 +15,23 @@ apiVersion: apps/v1
 kind: Deployment
 metadata: # kpt-merge: /my-nginx
   name: my-nginx
+  labels:
+    env: dev
 spec:
   replicas: 4
   selector:
     matchLabels:
+      env: dev
       app: my-nginx
   template:
     metadata:
       labels:
+        env: dev
         app: my-nginx
     spec:
       containers:
         - name: nginx
-          image: "nginx:1.14.2"
+          image: nginx:1.14.2
           ports:
             - protocol: TCP
               containerPort: 80
