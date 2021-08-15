@@ -29,3 +29,7 @@ pipeline:
     - image: gcr.io/kpt-fn/kubeval:v0.1
       configMap:
         strict: "true"
+inventory:
+  namespace: default
+  name: inventory-88211295
+  inventoryID: d6ca6ddfc02845cc5883c0e8f506bf89f8b013ad-1629035624709420000
